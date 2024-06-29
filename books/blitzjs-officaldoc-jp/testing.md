@@ -1,4 +1,4 @@
-    ---
+---
 title: テスト
 sidebar_label: テスト
 ---

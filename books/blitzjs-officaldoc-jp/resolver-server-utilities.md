@@ -1,4 +1,3 @@
-    ```
 ---
 title: サーバー ユーティリティ
 sidebar_label: サーバー ユーティリティ
@@ -266,4 +265,3 @@ const paginationData = await paginate(paginateArguments)
   - `nextPage`: `{ skip: number, take: number } | null` （次のページのページネーションペイロード）
   - `hasMore`: `boolean` （ロードする項目がまだあるかどうか。）
   - `count`: `number` （総項目数。`count` 関数により解決されます）
-    ```

@@ -1,4 +1,4 @@
-    ---
+---
 title: blitz build
 sidebar_label: blitz build
 ---

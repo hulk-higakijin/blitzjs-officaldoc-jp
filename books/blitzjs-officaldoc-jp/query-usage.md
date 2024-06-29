@@ -1,5 +1,4 @@
-    ===
-    ---
+---
 title: クエリの使用
 sidebar_label: クエリを使用
 ---
@@ -133,9 +132,9 @@ return (
 
 ## サーバー上で {#on-the-server}
 
-<Card type="info">
-  `getStaticProps` または `getServerSideProps` では、クエリおよびミューテーション関数を直接呼び出すことができます。
-</Card>
+:::message
+`getStaticProps` または `getServerSideProps` では、クエリおよびミューテーション関数を直接呼び出すことができます。
+:::
 
 ### `getStaticProps` {#get-static-props}
 
@@ -177,5 +176,3 @@ function ProjectPage({ project }) {
 
 export default ProjectPage
 ```
-
-    ===

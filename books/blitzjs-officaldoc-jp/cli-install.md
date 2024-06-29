@@ -1,4 +1,4 @@
-    ---
+---
 title: blitz インストール
 sidebar_label: blitz インストール
 ---

@@ -1,5 +1,4 @@
-    ===
-    ---
+---
 title: HTTP ミドルウェア
 sidebar_label: HTTP ミドルウェア
 ---
@@ -185,5 +184,3 @@ module.exports = {
 
 RPC API の詳細については、
 [RPC API ドキュメント](./rpc-specification) を参照してください。
-
-    ===

@@ -1,5 +1,4 @@
-    ===
-    ---
+---
 title: blitz codegen
 sidebar_label: blitz codegen
 ---
@@ -21,6 +20,3 @@ sidebar_label: blitz codegen
 
 ✔ コンパイル済み
 ```
-
-
-    ===

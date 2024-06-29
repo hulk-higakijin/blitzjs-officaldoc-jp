@@ -1,5 +1,4 @@
-    ===
-    ---
+---
 title: 認証設定
 sidebar_label: 設定
 ---
@@ -30,7 +29,7 @@ type SessionConfigOptions = {
   sessionExpiryMinutes?: number /* デフォルト: 30日 */
   anonSessionExpiryMinutes?: number /* デフォルト: 5年 */
   method?: "essential" | "advanced" /* デフォルト: 'essential' */
-  sameSite?: "strict" | "lax" | "none" /* デフォルト: 'lax'. 
+  sameSite?: "strict" | "lax" | "none" /* デフォルト: 'lax'.
     これを 'none' に設定する場合は、`secureCookies: true` も設定する必要があります。
     参照: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite */
   secureCookies?: boolean /* デフォルト: undefined. アプリがホスト名 `localhost` で実行されている場合、このフラグはスキップされます */
@@ -98,5 +97,3 @@ interface SessionModel extends Record<any, any> {
   privateData?: string | null
 }
 ```
-
-    ===

@@ -1,5 +1,4 @@
-    ===
-    ---
+---
 title: usePaginatedQuery
 sidebar_label: usePaginatedQuery
 ---
@@ -108,7 +107,7 @@ const Projects = () => {
     skip: ITEMS_PER_PAGE * page,
     take: ITEMS_PER_PAGE,
   })
-  
+
   function range(start: number, end: number) {
     const length = end - start + 1;
     return Array.from({ length }, (_, index) => index + start);
@@ -116,19 +115,19 @@ const Projects = () => {
 
   return (
     <div>
-      {projects !== undefined && 
+      {projects !== undefined &&
       <>
         {projects.map((p) =>
           <div key={p.id}>
-            <p>name: {p.name}</p>            
+            <p>name: {p.name}</p>
             <hr />
           </div>
         )}
-        <div style={{display:"flex", flexDirection:"column"}}>                
+        <div style={{display:"flex", flexDirection:"column"}}>
           <nav style={{display:"flex"}}>
               <button
                 onClick={() => router.push({ query: { page: page - 1 } })}
-                disabled={page == 0}              
+                disabled={page == 0}
               >
                 <span>&lt; Previous</span>
               </button>
@@ -139,7 +138,7 @@ const Projects = () => {
                     style={{"backgroundColor": idx === page ? "#0047AB": "#808080", color:"#FFF"}}
                     onClick={() => {
                       router.push({ query: { page: page - 1 } })
-                    }}                  
+                    }}
                   >
                     {page}
                   </button>
@@ -147,7 +146,7 @@ const Projects = () => {
               })}
               <button
                 onClick={() => router.push({ query: { page: page + 1 } })}
-                disabled={page == (pageCount-1)}              
+                disabled={page == (pageCount-1)}
               >
                 <span>Next &gt;</span>
               </button>
@@ -161,8 +160,8 @@ const Projects = () => {
             <span>{count}</span>
             <span> results</span>
           </p>
-        </div>    
-      </>}            
+        </div>
+      </>}
     </div>
   )
 }
@@ -322,5 +321,3 @@ const [
   - これはフォーム送信後にキャッシュを即座に更新するためによく使用される。
   - キャッシュの更新後、データの正確性を保証するために自動的に`refetch()`を呼び出す。オプションオブジェクトとして2番目の引数に`{refetch: false}`を渡すことでリフェッチを無効にする。
   - `setQueryData()`の使用例については[Blitzミューテーション使用ドキュメント](./mutation-usage#setQueryData)を参照。
-
-    ===

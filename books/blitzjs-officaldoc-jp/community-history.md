@@ -1,4 +1,4 @@
-    ---
+---
 title: コミュニティの歴史
 sidebar_label: 歴史
 ---

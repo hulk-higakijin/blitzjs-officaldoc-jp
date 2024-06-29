@@ -1,4 +1,4 @@
-    ---
+---
 title: ロギング
 sidebar_label: ロギング
 ---

@@ -1,4 +1,4 @@
-    ---
+---
 id: rpc-specification
 title: RPC仕様
 sidebar_label: RPC仕様
