@@ -6,9 +6,9 @@ title: クライアントサイドAPIの認証
 
 `useSession(options?) => Partial<PublicData> & {isLoading: boolean}`
 
-<Card type="note">
+:::alert
   注意: `useSession()`はデフォルトでsuspenseを使用するため、ツリーの上位に`<Suspense>`コンポーネントが必要です。 もしくは`useSession({suspense: false})`を設定してsuspenseを無効にすることができます。
-</Card>
+:::
 
 ### 例 {#example}
 

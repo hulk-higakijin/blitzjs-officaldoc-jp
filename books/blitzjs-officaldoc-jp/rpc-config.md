@@ -63,9 +63,9 @@ module.exports = withBlitz({
 })
 ```
 
-<Card type="note">
-  リゾルバーは依然として`queries`または`mutations`フォルダーに配置する必要があります。
-</Card>
+:::alert
+リゾルバーは依然として`queries`または`mutations`フォルダーに配置する必要があります。
+:::
 
 ## ロギング設定 {#blitz-rpc-logging}
 
@@ -93,12 +93,13 @@ logging?: {
   disablelevel?: "debug" | "info"
 }
 ```
-<Card type="note">
+
+:::alert
   Blitz RPCのデフォルト設定は：
   - `verbose`は構成されていない場合trueになります。
   - `info`レベルで`入力`と`リゾルバー完了時間`がログに記録されます。
   - `debug`レベルで`結果`と`next.jsのシリアル化時間`がログに記録されます。
-</Card>
+:::
 
 例：
 

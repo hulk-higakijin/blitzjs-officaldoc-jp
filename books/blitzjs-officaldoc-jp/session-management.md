@@ -10,9 +10,9 @@ Blitzには、任意のタイプの認証またはアイデンティティプロ
 2. ユーザーがログアウトしていても同じユーザーへの複数のリクエストを属性付け
 3. CSRF攻撃からの保護
 
-<Card type="note">
+:::alert
   ログイン、ログアウト、およびその他のセッションの変更は、[`SessionContext`](#sessioncontext) オブジェクトを介して行います。このオブジェクトは[サーバーのどこからでもアクセスできます](#access-session-on-the-server)。
-</Card>
+:::
 
 ## 基本 {#session-basics}
 

@@ -70,13 +70,11 @@ export default resolver.pipe(
 )
 ```
 
-<Card type="info">
-
+:::message
 パイプ全体のリゾルバー関数の入力型は、パイプの**最初**の引数の入力型によって決まります。
 
 このため、ほとんどの場合、`resolver.zod()`をパイプの最初に置く必要があります。
-
-</Card>
+:::
 
 ### API {#api}
 

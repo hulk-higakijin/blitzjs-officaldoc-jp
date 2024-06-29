@@ -27,9 +27,9 @@ blitz?: {
 };
 ```
 
-<Card type="note">
+:::alert
   カスタム`resolverPath`の設定に関する詳細は、[RPC Specification](/docs/rpc-specification#url)を参照してください。
-</Card>
+:::
 
 ## クライアント {#blitzjs-next-client}
 
@@ -89,9 +89,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default withBlitz(MyApp)
 ```
 
-<Card type="note">
+:::alert
   `<ErrorBoundary />`プロバイダーと`<ErrorComponent />`コンポーネントは`@blitzjs/next`により提供されます。
-</Card>
+:::
 
 ### API {#blitzjs-next-client-api}
 
@@ -153,9 +153,9 @@ Blitz CLIはカスタムNext.jsサーバーの実行をサポートします。�
 
 すべてのNext.jsラッパー関数は[`superjson`](https://github.com/blitz-js/superjson)でシリアライズされます。これにより、データを返す際に`Date`、`Map`、`Set`、`BigInt`を使用できます。もう一つ注意すべき点は、BlitzはNext.jsリクエストハンドラーを呼び出す前にプラグインのミドルウェアを実行することです。
 
-<Card type="note">
+:::alert
   `gSSP`、`gSP`、`api`関数は、認証プラグインを使用している場合、セッションのコンテキストを引き継ぎます。認証プラグインについての詳細は[@blitzjs/auth](/docs/auth)を参照してください。
-</Card>
+:::
 
 ### 例 {#blitzjs-next-wrapper-examples}
 

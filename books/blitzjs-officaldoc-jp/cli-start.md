@@ -30,11 +30,9 @@ blitz dev -e staging
 
 #### 例
 
-<Card type="note">
-
+:::alert
 `blitz start`を実行する前に`blitz build`を実行することを確認してください
-
-</Card>
+:::
 
 ```bash
 blitz start

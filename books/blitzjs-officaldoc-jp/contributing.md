@@ -127,11 +127,9 @@ Chromeバージョンに対応した`chromedriver`をインストールしてい
 
 ### アプリ内でBlitzの開発バージョンをテストする {#testing-development-version-of-blitz}
 
-<Card type="info">
-
+:::message
 現在、Blitzのローカル開発バージョンをテストするには、`blitz/apps/`フォルダー内のアプリをテストできます。ここでは、Blitzの依存関係は自動的にローカル開発バージョンを使用します。開発テストに使用します。同時に`blitz`フォルダー内で`pnpm dev`を実行していることを確認してください。
-
-</Card>
+:::
 
 #### Blitz CLIをリンクする（オプション）
 

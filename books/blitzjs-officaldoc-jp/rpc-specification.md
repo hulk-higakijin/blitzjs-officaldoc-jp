@@ -4,15 +4,13 @@ title: RPC仕様
 sidebar_label: RPC仕様
 ---
 
-<Card type="caution">
-
+:::alert
 これはBlitzのクエリとミューテーションを非Blitzアプリケーションで使用するためのドキュメントです。例えば、モバイルアプリケーションや他のアプリケーションから使用する場合です。
 
 **アプリケーションでクエリとミューテーションを使用するには、[クエリの使用方法](./query-usage)と[ミューテーションの使用方法](./mutation-usage)を参照してください。**
 
 **アプリケーションに外部APIとしてアクセスしたい場合は、[API Routes](https://nextjs.org/docs/api-routes/introduction)を参照してください。**
-
-</Card>
+:::
 
 ## リクエストの詳細 {#request-details}
 
