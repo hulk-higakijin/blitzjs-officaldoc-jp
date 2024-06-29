@@ -300,7 +300,8 @@ migrations/
 
 ## モデル属性のために生成されたコードの更新 {#update-generated-code-for-our-model-attributes}
 
-:::note info
+:::message
+infomation
 インフォメーション
 アプリを再度実行する前に、生成されたコードの一部をカスタマイズする必要があります。最終的にはこれらの修正は不要になりますが、現在のところ、いくつかの未解決の問題を回避する必要があります。
 :::
@@ -603,8 +604,8 @@ export default resolver.pipe(resolver.zod(CreateQuestion), resolver.authorize(),
 });
 ```
 
-:::note info
-インフォメーション
+:::message
+infomation
   クエリ (またはミューテーション) ファイルからクエリ自体以外のものをクライアントにインポートすることはできないため、共有の `validations.ts` ファイルを作成します。理由については [クエリの使用](https://blitzjs.com/docs/query-usage) および [ミューテーションの使用](https://blitzjs.com/docs/mutation-usage) を参照してください。
 :::
 
