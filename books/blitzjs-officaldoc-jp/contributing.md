@@ -1,99 +1,102 @@
+```mdx
 ---
-title: 貢献する方法
+title: How to Contribute
+sidebar_label: How to Contribute
 ---
 
-👋 Blitzに貢献することに興味を持っていただき、とても嬉しいです！オープンソースの経験がなくても、始めるお手伝いをします :)
+👋 Blitzに貢献することに興味を持ってくださり、とても嬉しいです！以前にオープンソースの経験がなくても、スタートをサポートします :)
 
-## 最初にすること {#first-things-first}
+## まず最初に {#first-things-first}
 
-1. オープンソースは初めてですか？[GitHubでオープンソースプロジェクトに貢献する方法](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)をご覧ください。
-2. [Blitz行動規範](./code-of-conduct)を熟読してください。
-3. [コミュニティの運営方法](./how-the-community-operates)を学びましょう。
+1. オープンソース初心者ですか？このガイドを見てください
+   [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
+2. [Blitzの行動規範](./code-of-conduct)に慣れ親しんでください
+3. [コミュニティの運営方針](./how-the-community-operates)を学びましょう
 
-## 何に取り組むべき？ {#what-to-work-on}
+## 何に取り組むか？ {#what-to-work-on}
 
-[`status/ready-to-work-on`](https://github.com/blitz-js/blitz/labels/status%2Fready-to-work-on)ラベルが付いている問題が始めるのに最適です。
+[`status/ready-to-work-on`](https://github.com/blitz-js/blitz/labels/status%2Fready-to-work-on)ラベルの付いたイシューが最適なスタートポイントです。
 
-適宜、`good first issue`や`good second issue`とラベル付けされた問題もあります。
+適切な場合には、`good first issue`や`good second issue`というラベルも付けています。
 
-興味がある問題を見つけたら、誰も取り組んでいない場合、その問題にコメントして取り組むことを宣言してください。ただし、数日以内に作業を開始できる場合に限ります。
+興味を持ったイシューがあり、他に誰も取り組んでいなければ、そのイシューにコメントして「このイシューに取り組む」と伝えてください。ただし、数日以内に作業を開始できる場合のみにしてください。
 
-必要に応じて、問題内やDiscordで質問してください。喜んでお手伝いします！
+質問があれば、イシュー内やDiscordで何でも聞いてください。お手伝いします！
 
-Blitzjs.comのウェブサイトおよびドキュメントリポジトリにも[`ready to work on | help wanted`](https://github.com/blitz-js/blitzjs.com/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22ready+to+work+on+%7C+help+wanted%22)ラベルが付いた問題があります。
+Blitzjs.comのウェブサイトやドキュメントリポジトリにも[`ready to work on | help wanted`](https://github.com/blitz-js/blitzjs.com/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22ready+to+work+on+%7C+help+wanted%22)ラベルの付いたイシューがあります。
 
-### いつでも歓迎するもの {#things-that-are-always-welcome}
+### 常に歓迎されること {#things-that-are-always-welcome}
 
 - テストの追加
 - ドキュメントの改善
 - エラーメッセージの改善
-- ロギングの改善（より明確、より美しい）
+- ログの改善（より明確、より美しく）
 - パフォーマンスやセキュリティの改善
 - ブログ、ビデオ、コースなどの教育コンテンツ
 
-他の方法で貢献したい場合は、Discordでお問い合わせください！
+他の方法で貢献したい場合は、Discordで相談してください！
 
-どのような形で貢献しても、[@all-contributors bot](https://allcontributors.org/docs/en/bot/usage)を使って自分を貢献者として追加してください！
+どのような形であれ貢献した後は、[@all-contributors bot](https://allcontributors.org/docs/en/bot/usage)を使って自分をコントリビューターとして追加してください！
 
-## コードベースは庭園のようなもの {#our-codebase-is-a-garden}
+## 私たちのコードベースは庭のようなものです {#our-codebase-is-a-garden}
 
-Blitzのコードベースはコミュニティガーデンのようなものです。美しい植物や野菜がたくさんありますが、すぐに雑草を見つけることができます！雑草を見つけたら、取り除いてください :) 小規模なリファクタリングは常に奨励されます。大規模なリファクタリングを行いたい場合は、まず問題を開くか、Discordで確認するのがベストです。ほとんどの場合、同意します。
+Blitzのコードベースはコミュニティガーデンのようなものです。美しい植物や野菜がたくさんありますが、すぐに雑草を見つけることができます！それを見つけたら、取り除いてください :) マイナーなリファクタリングは常に奨励されています。大きなリファクタリングをしたい場合は、まずイシューを立てるか、Discordで確認してください。おそらく同意するでしょう。
 
-## PRを提出した後に期待すること {#what-to-expect-after-submitting-a-pr}
+## PRを提出した後に期待できること {#what-to-expect-after-submitting-a-pr}
 
-Blitzのメンテナーが通常数日以内にPRをレビューします。
+Blitzのメンテナーが通常数日以内にあなたのPRをレビューします。
 
-ユーザーに影響を与えるコードを変更した場合は、ドキュメントリポジトリにもPRを提出してください。これを行わないと、PRがマージされるのをブロックします。
+ユーザーが目にするコードを変更した場合は、ドキュメントリポジトリにもPRを出してください。そうしないとPRのマージがブロックされます。
 
-変更した内容をカバーするテストも追加する必要があります。
+また、変更をカバーするためのテストを追加する必要があります。
 
-すべての要件が満たされ、メンテナーがコードに満足したら、それをcanaryブランチにマージします。次のBlitzリリースに含まれます。
+すべての要件が満たされ、メンテナーがあなたのコードに満足したら、canaryブランチにマージされます。次のBlitzリリースに含まれます。
 
-最後に、Blitzの公式貢献者としてall-contributorsリストに追加されます。**おめでとうございます！！**
+最後に、あなたは公式なBlitzコントリビューターとしてall-contributorsリストに追加されます。**おめでとうございます!!**
 
 ## プロジェクト管理 {#project-management}
 
-すべての問題とPRを追跡するために、[GitHub Project Board](https://github.com/blitz-js/blitz/projects/4)を使用しています。
+すべてのイシューとPRを追跡するために、[GitHub Project Board](https://github.com/blitz-js/blitz/projects/4)を使用しています。
 
-## コミットアクセス {#commit-access}
+## コミット権限 {#commit-access}
 
-Blitzリポジトリへの定期的な貢献者には、リベラルなコミットアクセスを提供します。これにより、フォークを使用せずにBlitzリポジトリに直接ブランチをプッシュできます。
+Blitzリポジトリには、ある程度定期的に貢献している人には自由にコミット権限を付与します。これにより、フォークを使用せずに直接Blitzリポジトリにブランチをプッシュできます。
 
-定期的に貢献していることに気付いた場合、アクセスを提供することがあります。しかし、定期的に助けているがまだアクセスを得ていない場合は、アクセスを要求することもできます。
+定期的に貢献していることに気づいたらアクセスを付与しますが、定期的にヘルプをしているのにまだアクセスが付与されていない場合は、アクセスを求めてもかまいません。
 
-メインのBlitzリポジトリでは、コードオーナーによるコードレビューがPRをマージするために必要です。
+メインのBlitzリポジトリでは、PRのマージにはコードオーナーのレビューが必要です。
 
-しかし、ドキュメントリポジトリでは、他の人がPRを承認した後、誰でもPRをマージできます。
+しかし、ドキュメントリポジトリでは、他の誰かがPRを承認すれば誰でもPRをマージできます。
 
-## 開発セットアップ {#development-setup}
+## 開発環境のセットアップ {#development-setup}
 
-Node 14を使用していることを確認してください — Nextは新しいNodeバージョンでは動作しない`node-sass`を使用します。
+Node 14を使用していることを確認してください — Nextは`node-sass`を使用しており、新しいNodeバージョンでは動作しません。
 
-**1.** [blitzリポジトリ](https://github.com/blitz-js/blitz)をフォークします。
+**1.** [Blitzリポ](https://github.com/blitz-js/blitz)をフォークします
 
-**2.** フォークしたリポジトリをクローンします。
+**2.** フォークしたリポジトリをクローンします
 
 ```sh
-# 以下のUSERNAMEをGitHubユーザー名に置き換えてください。
+# 以下のUSERNAMEをGitHubユーザー名に置き換えます
 git clone git@github.com:USERNAME/blitz.git
 cd blitz
 ```
 
-**3.** （オプション、macOSのみ）`sodium-native`用の必要なパッケージをインストールします。
+**3.** （オプション、macOSのみ）`sodium-native`用の必須パッケージをインストールします
 
-`sodium-native`に関連する問題が発生した場合は、次のコマンドを実行して修正してください：
+`sodium-native`に関連する問題が発生した場合は、以下のコマンドを実行して修正します：
 
 ```sh
 brew install autoconf automake
 ```
 
-**4.** 依存関係をインストールします。
+**4.** 依存関係をインストールします
 
 ```sh
 pnpm i
 ```
 
-**5.** パッケージサーバーを起動します。これはパッケージ開発や例の開発のために**必ず実行する必要があります**。
+**5.** パッケージサーバーを起動します。これはパッケージ開発や例の開発のために**動作している必要があります**
 
 ```sh
 pnpm dev
@@ -101,42 +104,40 @@ pnpm dev
 
 ## テストの実行 {#running-tests}
 
-### Blitz.jsテスト {#blitz-tests}
+### Blitz.jsのテスト {#blitz-tests}
 
-#### 単体テスト
+#### ユニットテスト
 
-`packages/`内のほとんどのBlitzパッケージにはvitest単体テストがあります。
+`packages/`内のほとんどのBlitzパッケージにはvitestのユニットテストがあります。
 
-- 単一パッケージのテストを実行するには、そのパッケージフォルダー（例えば`packages/blitz-next`）内で`pnpm test`を実行します。
-- リポジトリのルートからすべての単体テストを実行するには、`pnpm test`を実行します。（これを実行する前に`pnpm build`または`pnpm dev`を実行していることを確認してください）。注：これにより、統合テストを含むすべてのテストが実行されます。
+- 単一のパッケージでテストを実行するには、そのパッケージフォルダー内で`pnpm test`を実行します（例：`packages/blitz-next`）
+- リポジトリルートからすべてのユニットテストを実行するには`pnpm test`を実行します。（事前に`pnpm build`または`pnpm dev`を実行していることを確認してください）。注：これにより、統合テストも含めてすべてのテストが実行されます。
 
 #### 統合テスト
 
 Blitzの統合テストはルートの`integration-tests/`フォルダー内にあります。
 
-Chromeバージョン用の`chromedriver`がインストールされていることを確認してください。以下の方法でインストールできます：
+Chromeバージョンに対応した`chromedriver`をインストールしていることを確認してください。以下のコマンドでインストールできます
 
 - Mac OS Xでは`brew install --cask chromedriver`
 - Windowsでは`chocolatey install chromedriver`
-- または、[chromedriverリポジトリ](https://chromedriver.storage.googleapis.com/index.html)からインストールされているChromeバージョンに一致するバージョンを手動でダウンロードし、バイナリを`<blitz-repo>/node_modules/.bin`に追加します（一致するバージョンがない場合、下位のバージョンをダウンロードしますが、上位のバージョンは避けてください）。
+- または、対応するChromeバージョンの`chromedriver`バイナリを[chromedriver repo](https://chromedriver.storage.googleapis.com/index.html)から手動でダウンロードして、`<blitz-repo>/node_modules/.bin`に追加します
 
-リポジトリのルートから`pnpm test`を実行して、すべてのテスト（単体テストと統合テストの両方）を実行できます。
+リポジトリルートからすべてのテスト（ユニットテストと統合テストの両方）を実行するには、`pnpm test`を実行します。
 
-統合テストフォルダー内で`blitz dev`を実行して統合アプリを手動で実行できます。例えば、`integration-tests/auth/`のように。
+統合テストフォルダー内で`blitz dev`を実行して統合アプリを手動で実行できます（例：`integration-tests/auth/`）。
 
-### Blitzの開発バージョンをアプリ内でテストする {#testing-development-version-of-blitz}
+### アプリ内でBlitzの開発バージョンをテストする {#testing-development-version-of-blitz}
 
 <Card type="info">
 
-現在、Blitzのローカル開発バージョンをテストするには、`blitz/apps/`フォルダー内のアプリをテストできます。ここでは、Blitzの依存関係が自動的にローカル開発バージョンを使用します。これは開発テスト用に使用します。また、同時に`blitz`フォルダー内で`pnpm dev`を実行していることを確認する必要があります。
+現在、Blitzのローカル開発バージョンをテストするには、`blitz/apps/`フォルダー内のアプリをテストできます。ここでは、Blitzの依存関係は自動的にローカル開発バージョンを使用します。開発テストに使用します。同時に`blitz`フォルダー内で`pnpm dev`を実行していることを確認してください。
 
 </Card>
 
 #### Blitz CLIをリンクする（オプション）
 
-以下を
-
-実行して、開発CLIをローカルバイナリとしてリンクし、どこでもテストで使用できるようにします。
+以下のコマンドで開発CLIをローカルバイナリとしてリンクし、どこでもテストに使用できるようにします。
 
 ```sh
 pnpm link ./packages/blitz
@@ -144,20 +145,20 @@ pnpm link ./packages/blitz
 
 ## リリースの実施 {#doing-a-release}
 
-[changesets](https://github.com/changesets/changesets)パッケージとそのGitHubアクションのフォークバージョンを使用しています。こちらで見つけることができます：[GitHub - blitz-js/changesets-action](https://github.com/blitz-js/changesets-action)。ユーザーに影響を与えるすべてのPRにはchangesetが必要です。そのPRが承認され、`main`ブランチにマージされると、`Version packages (beta)`という名前の「リリース」PRが自動的に作成または更新されます。このPRは各内部パッケージのchangelogと各blitzパッケージのバージョンを`package.json`ファイル内でインクリメントして更新します。
+[changesets](https://github.com/changesets/changesets)パッケージと、以下にあるGitHubアクションのフォークを使用しています：[GitHub - blitz-js/changesets-action](https://github.com/blitz-js/changesets-action)。ユーザーが目にするPRにはすべてchangesetが必要です。そのPRが承認され`main`ブランチにマージされると、「Version packages (beta)」という名前の"release" PRが自動的に作成または更新されます。このPRは、各内部パッケージのチェンジログと各Blitzパッケージのバージョンを`package.json`ファイル内で増分します。
 
-自動生成されたPRが十分なchangesetを蓄積すると、このPRを`main`ブランチにマージすることでリリースを実行します。リリースアクションをトリガーするには、要件を満たすのを待たずにPRをsquash and mergeする必要があります。これは、CIがGitHubアクションによって生成されたPRでは実行されないためです。このPRをマージすると、リリースアクションが生成され、npmに公開され、GitHubにリリースが作成されます。
+自動生成されたPRが十分なchangesetを蓄積したら、このPRを`main`ブランチにマージしてリリースを実行します。リリースアクションをトリガーするには、このPRをマージ保護ルールを無視してスカッシュマージする必要があります。これは、githubアクションによって生成されたPRではCIが実行されないためです。このPRをマージすると、リリースアクションが生成され、npmに公開され、GitHubにリリースが作成されます。
 
-自動生成されたGitHubのリリースには、いくつかの手動のクリーンアップが必要です。次のような「無駄」を削除することをお勧めします：
+GitHubの自動生成されたリリースには、いくつかの手動クリーンアップが必要です。一部の"フラッフ"を削除することをお勧めします：
 
 ```
 Updated dependencies [3b213a3]
 	@blitzjs/rpc@2.0.0-beta.18
 ```
 
-まだ安定リリースを行っていないため、`changesets`パッケージでプレリリースモードに設定されていることにも注意してください。したがって、GitHubでリリースを編集する際に「Set as a pre-release」チェックボックスをオフにし、「Set as the latest release」チェックボックスを選択する必要があります。
+また、安定版リリースをまだ行っていないため、`changesets`パッケージでプレリリースモードに設定されていることに注意してください。したがって、GitHubのリリースを編集する際には「Set as a pre-release」チェックボックスを解除し、「Set as the latest release」チェックボックスを選択する必要があります。
 
-`changesets`パッケージのプレリリースモードのカテゴリにある場合、npmに公開されたときに各パッケージが`latest`でタグ付けされるようにする必要があります。これは主に内部チーム向けです。各パッケージに対して次を実行します：
+`changesets`パッケージでのプレリリースモードにあるため、npmに公開する際には各パッケージが`latest`タグでタグ付けされるようにする必要があります。これには適切なnpm権限が必要です。_これは主に内部チーム向けの作業です。_ 各パッケージに対して以下を実行します：
 
 ```shell
 npm dist-tag add blitz@2.0.0-beta.18 latest
@@ -166,20 +167,24 @@ npm dist-tag add @blitzs/rpc@2.0.0-beta.18 latest
 npm dist-tag add @blitzs/next@2.0.0-beta.18 latest
 ```
 
-`changesets`のプレリリースモードに関する詳細情報は、こちらのドキュメントを参照してください：[changesets/prereleases.md at main · changesets/changesets · GitHub](https://github.com/changesets/changesets/blob/main/docs/prereleases.md)
+`changesets`プレリリースモードに関する詳細情報は、こちらのドキュメントをご覧ください：
+[changesets/prereleases.md at main · changesets/changesets · GitHub](https://github.com/changesets/changesets/blob/main/docs/prereleases.md)
 
 ## トラブルシューティング {#troubleshooting}
 
-ここに記載すべき問題に直面した場合は、PRを提出してください！❤️
+ここに記載されるべき問題に遭遇した場合は、PRを提出してください！
+❤️
 
 #### Gitエラー
 
-コミットできませんか？`command not found`や`stdin is not a tty`のようなエラーが発生しますか？それはおそらくHuskyのエラーです！[トラブルシュートガイド](https://typicode.github.io/husky/#/?id=troubleshoot)を確認してみてください。
+コミットできない場合や`command not found`や`stdin is not a tty`のようなエラーが発生する場合、それはおそらくHuskyのエラーです！彼らの[トラブルシュートガイド](https://typicode.github.io/husky/#/?id=troubleshoot)を確認してください。
 
 #### Preconstructエラー
 
-WindowsでPreconstructを実行しようとすると、シンボリックリンクやEPERMエラーが発生する場合、Preconstructがシンボリックリンクを作成できるように[Windows開発者モード](https://www.howtogeek.com/292914/what-is-developer-mode-in-windows-10/)を有効にする必要があるかもしれません。
+WindowsでPreconstructを実行しようとした際にシンボリックリンクやEPERMエラーに遭遇する場合は、[Windows Developer Mode](https://www.howtogeek.com/292914/what-is-developer-mode-in-windows-10/)を有効にする必要があるかもしれません。これにより、Preconstructがシンボリックリンクを作成できるようになります。
 
-#### Windowsでのファイル不足
+#### Windowsでファイルが見つからない
 
-`pnpm build`を実行した後でもファイルが不足しているというエラーが発生する場合は、次のように`core.symlinks`を`true`に設定してリポジトリを再クローンしてみてください：`git clone -c core.symlinks=true <URL>`。
+`pnpm build`を実行してもファイルが見つからないエラーが発生する場合は、`core.symlinks`設定を`true`にしてリポジトリを再度クローンしてみてください： `git clone -c core.symlinks=true <URL>`.
+
+```
