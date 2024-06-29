@@ -1,7 +1,5 @@
-```mdx
 ---
 title: 認証とセキュリティ
-sidebar_label: 認証とセキュリティ
 ---
 
 認証は、アプリケーション内のデータやページへのアクセスを許可または禁止する行為です。
@@ -9,8 +7,8 @@ sidebar_label: 認証とセキュリティ
 ## データを保護する {#secure-your-data}
 
 データを保護するには、保護したいすべてのクエリおよびミューテーションの内部で
-[`ctx.session.$authorize()`](#ctxsessionauthorize) を呼び出してください。 
-（あるいは [`resolver.pipe`](./resolver-server-utilities#resolverpipe) を使用している場合は、 
+[`ctx.session.$authorize()`](#ctxsessionauthorize) を呼び出してください。
+（あるいは [`resolver.pipe`](./resolver-server-utilities#resolverpipe) を使用している場合は、
 [`resolver.authorize`](./resolver-server-utilities#resolverauthorize) を使用してください）。
 同様に [API ルート](https://nextjs.org/docs/api-routes/introduction) を保護することもできます。
 
@@ -431,5 +429,4 @@ export function simpleRolesIsAuthorized({
   }
   return false
 }
-```
 ```

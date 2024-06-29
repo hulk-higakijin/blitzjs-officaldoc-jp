@@ -1,7 +1,5 @@
-```mdx
 ---
 title: blitz コンソール
-sidebar_label: blitz コンソール
 ---
 
 **別名: `blitz c`**
@@ -39,5 +37,4 @@ Blitz コンソールに入りました
     text: "調子どう？"
   }
 ]
-```
 ```

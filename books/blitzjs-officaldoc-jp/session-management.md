@@ -1,7 +1,5 @@
-    ```mdx
 ---
 title: セッション
-sidebar_label: セッション
 ---
 
 Blitzには、任意のタイプの認証またはアイデンティティプロバイダーで使用できる組み込みのセッション管理機能があります。
@@ -246,4 +244,3 @@ interface SessionContext extends PublicData {
   ) => Promise<void>
 }
 ```
-    ```

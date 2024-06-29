@@ -1,7 +1,5 @@
-```mdx
 ---
 title: クライアントサイドAPIの認証
-sidebar_label: クライアントサイドAPI
 ---
 
 ## `useSession()` {#use-session}
@@ -108,4 +106,3 @@ useRedirectAuthenticated("/dashboard")
 ### 戻り値 {#returns-3}
 
 - なし
-```

@@ -1,7 +1,5 @@
-```mdx
 ---
 title: How to Contribute
-sidebar_label: How to Contribute
 ---
 
 👋 Blitzに貢献することに興味を持ってくださり、とても嬉しいです！以前にオープンソースの経験がなくても、スタートをサポートします :)
@@ -186,5 +184,3 @@ WindowsでPreconstructを実行しようとした際にシンボリックリン�
 #### Windowsでファイルが見つからない
 
 `pnpm build`を実行してもファイルが見つからないエラーが発生する場合は、`core.symlinks`設定を`true`にしてリポジトリを再度クローンしてみてください： `git clone -c core.symlinks=true <URL>`.
-
-```

@@ -1,7 +1,5 @@
-```mdx
 ---
 title: Mutation Resolvers
-sidebar_label: Mutation Resolvers
 ---
 
 Blitzのミューテーションはプレーンな非同期JavaScript関数で、常にサーバー側で実行されます。
@@ -58,4 +56,3 @@ export default async function createProject(
 _プロジェクトのルートを自動的にエイリアスするため、`import db from 'db'`は`<project_root>/db/index.ts`をインポートしています_
 
 次に、これらのミューテーションをコンポーネントでどのように使用するかを知るために、[これらのドキュメントを読む](./mutation-usage)と良いでしょう。
-```

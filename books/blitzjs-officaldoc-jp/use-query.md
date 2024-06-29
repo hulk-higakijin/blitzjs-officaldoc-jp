@@ -1,7 +1,5 @@
-```mdx
 ---
 title: useQuery
-sidebar_label: useQuery
 ---
 
 ### 例 {#example}
@@ -274,4 +272,3 @@ const [
   - フォームを送信した後、キャッシュを即座に更新するためによく使用されます。
   - キャッシュを更新した後、データが正しいことを確認するために自動的に`refetch()`が呼び出されます。2番目の引数としてオプションオブジェクト`{refetch: false}`を渡すことにより、リフェッチを無効にすることができます。
   - `setQueryData()`の使用例については[Blitz mutation usage docs](./mutation-usage#setQueryData)を参照してください。
-```

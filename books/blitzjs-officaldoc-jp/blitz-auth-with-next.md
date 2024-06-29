@@ -1,7 +1,5 @@
-```mdx
 ---
 title: Next.jsでのBlitz認証
-sidebar_label: Next.jsでのBlitz認証
 ---
 
 このガイドでは、Next.jsアプリにBlitz認証を追加する方法を説明します。Next.jsとBlitzのセットアップ、基本的な認証ロジックの作成、NextのページおよびAPIハンドラー内でのBlitz認証機能の使用について説明します。
@@ -440,3 +438,6 @@ export default login
 ```
 
 ### ログインフォームの`onSubmit`メソッドに`/login`のフェッチコール
+
+
+TODO: 途切れているので続きを入力

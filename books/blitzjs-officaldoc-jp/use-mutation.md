@@ -1,7 +1,5 @@
-```mdx
 ---
 title: useMutation
-sidebar_label: useMutation
 ---
 
 ### 例 {#example}
@@ -137,4 +135,3 @@ const promise = invoke(inputArguments, {
   - エラーが発生した場合のクエリエラーオブジェクト。
 - `reset: () => void`
   - ミューテーションの内部状態をクリアする関数（つまり、ミューテーションを初期状態にリセットします）。
-```

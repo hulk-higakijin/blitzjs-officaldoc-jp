@@ -1,7 +1,5 @@
-```mdx
 ---
 title: "@blitzjs/next"
-sidebar_label: "@blitzjs/next"
 ---
 
 ## 概要 {#blitzjs-next-overview}
@@ -340,5 +338,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     </ErrorBoundary>
   )
 }
-```
 ```

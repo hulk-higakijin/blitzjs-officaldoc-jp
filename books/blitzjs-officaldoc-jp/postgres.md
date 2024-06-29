@@ -1,7 +1,5 @@
-```mdx
 ---
 title: ローカルでPostgresを実行する
-sidebar_label: ローカルでPostgresを実行する
 ---
 
 ローカルでPostgresを実行するには、基本的に2つの方法があります。
@@ -89,4 +87,3 @@ POSTGRES_DB=your_database_name
 
 4. 新しいデータベースを起動し、`docker-compose up -d` と
    `blitz prisma migrate dev` を実行して最新のマイグレーションにします。
-```

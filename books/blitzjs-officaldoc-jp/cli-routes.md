@@ -1,7 +1,5 @@
-```mdx
 ---
 title: blitz ルート
-sidebar_label: blitz ルート
 ---
 
 **エイリアス: `blitz r`**
@@ -33,5 +31,4 @@ sidebar_label: blitz ルート
 │ POST │ app/users/queries/getUsers.ts       │ /api/users/queries/getUsers       │ RPC  │
 └──────┴─────────────────────────────────────┴───────────────────────────────────┴──────┘
 ✨ 4.60秒で完了
-```
 ```

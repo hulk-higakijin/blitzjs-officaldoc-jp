@@ -1,7 +1,5 @@
-    ```mdx
 ---
 title: ユーティリティ
-sidebar_label: ユーティリティ
 ---
 
 Blitzは便利なユーティリティ関数を提供します
@@ -85,4 +83,3 @@ const formattedErrorsObject = formatZodError(myZodError)
 #### 返り値
 
 元のスキーマと同じ形状を取るエラーオブジェクト
-    ```

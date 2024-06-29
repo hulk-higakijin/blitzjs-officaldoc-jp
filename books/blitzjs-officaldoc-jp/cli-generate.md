@@ -1,7 +1,5 @@
-```mdx
 ---
 title: blitz generate
-sidebar_label: blitz generate
 ---
 
 **エイリアス: `blitz g`**
@@ -157,15 +155,15 @@ blitz generate model [fieldName]:[type]:[attribute]
 
   - `[]` を追加して型をリストにする: `task[]`
 
-- `attribute`: 
+- `attribute`:
   [prisma フィールド属性](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/data-model#attributes) を追加するためのもの
   - **オプション**
   - サポートされているもの: `default`, `unique`
   - 属性に引数が必要な場合は `=` を使用して指定できます。例: `default=false`。これにより、デフォルト値が `false` に設定されます。
 
 詳細は以下を参照してください:
-[Prisma スカラ型のドキュメント](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference/#model-field-scalar-types) 
-または 
+[Prisma スカラ型のドキュメント](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference/#model-field-scalar-types)
+または
 [Prisma リレーションのドキュメント](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-schema/relations)。
 
 ##### 例
@@ -384,5 +382,4 @@ export const cliConfig: BlitzCliConfig = {
     },
   },
 }
-```
 ```

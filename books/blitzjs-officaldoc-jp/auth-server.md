@@ -1,7 +1,5 @@
-```mdx
 ---
 title: 認証サーバーサイドAPI
-sidebar_label: サーバーサイドAPI
 ---
 
 ## クエリとミューテーションで {#in-queries-and-mutations}
@@ -195,5 +193,4 @@ export const updateUserRole = async (
   // すべてのアクティブなセッションでロールを更新
   await setPublicDataForUser(userId, { role })
 }
-```
 ```

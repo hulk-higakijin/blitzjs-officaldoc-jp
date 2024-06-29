@@ -1,7 +1,5 @@
-```mdx
 ---
 title: NextAuthでのサードパーティーログイン
-sidebar_label: NextAuthでのサードパーティーログイン
 ---
 
 Blitzは、任意のNextjsアプリケーションでBlitzのセッション管理を使用して、任意の
@@ -223,4 +221,3 @@ return { redirectUrl: "/github" }
 - `NextAuthAdapter`に渡される構成を介して
   - 成功した場合、`config.successRedirectUrl`が使用されます
   - エラーの場合、`config.errorRedirectUrl`が使用されます
-```

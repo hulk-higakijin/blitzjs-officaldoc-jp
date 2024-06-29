@@ -1,7 +1,5 @@
-```mdx
 ---
 title: 使用ガイド - Next.js 13とBlitzツールキット
-sidebar_label: 使用ガイド Next.js 13
 ---
 
 ### 移行ガイド {#migration-guide}
@@ -95,7 +93,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 
 #### Blitz認証 {#blitz-auth}
 
-##### getBlitzContext 
+##### getBlitzContext
 
 この関数はサーバーコンポーネントから提供されるクッキーとヘッダーを使用して現在のセッションを返します。
 
@@ -232,6 +230,4 @@ import getCurrentUser from "src/users/queries/getCurrentUser"
 
 ```tsx
 const user = await invoke(getCurrentUser, null)
-```
-
 ```

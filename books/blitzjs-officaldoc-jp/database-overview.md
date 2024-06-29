@@ -1,14 +1,10 @@
-```mdx
 ---
 title: データベース概要
-sidebar_label: 概要
 ---
 
-<Card type="info">
-
+:::message
 あなたがデータベースに全く新しいのであれば、[Prismaのデータガイド](https://www.prisma.io/dataguide/)をチェックしてください。ここには、知りたいと思うことの大部分が網羅されています。
-
-</Card>
+:::
 
 デフォルトでは、Blitzは強く型付けされたデータベースクライアントである[Prisma](https://prisma.io)を使用します。
 
@@ -60,4 +56,3 @@ datasource db {
 3. テスト実行時にもPostgreSQLを使用するように`.env.test.local`を更新します（`.env.local`とは異なるデータベースを指す必要があります）。
 4. `db/migrations`フォルダーを削除します。
 5. `blitz prisma migrate dev`を実行します。このコマンドは、データベースがまだ存在しない場合はデータベースを作成し、スキーマに基づいてテーブルを作成します。
-```

@@ -1,7 +1,5 @@
-```mdx
 ---
 title: ミューテーションの使用
-sidebar_label: ミューテーションの使用
 ---
 
 ## React コンポーネントで {#in-a-react-component}
@@ -204,5 +202,4 @@ export default function (props: { query: { id: number } }) {
     </Formik>
   )
 }
-```
 ```

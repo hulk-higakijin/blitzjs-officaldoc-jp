@@ -1,7 +1,5 @@
-```mdx
 ---
 title: Passport.jsによるサードパーティログイン
-sidebar_label: Passport.js wによるサードパーティログイン
 ---
 
 Blitzは既存の[Passport.js認証戦略](http://www.passportjs.org/)を使用できるアダプターを提供します。
@@ -326,4 +324,3 @@ export default api(
 ```
 
 上記の設定は`example.com/api/auth/custom-name`および`api/auth/custom-name/callback`APIルートを生成します。
-```

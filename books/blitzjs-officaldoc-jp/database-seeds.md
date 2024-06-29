@@ -1,7 +1,5 @@
-```mdx
 ---
 title: データベースシード
-sidebar_label: シード
 ---
 
 ## について {#about}
@@ -58,4 +56,3 @@ export default seed
 2. さて、シンプルに`blitz db seed`を実行するだけで完了です。データベースに新しいデータがすべて揃っているはずです。
 
 > ヒント： [chance](https://chancejs.com/) や [faker](https://fakerjs.dev/) のようなライブラリを使用して、より現実的なデータ（名前、住所、メール、場所、日付、さらにはロレムイプサム）を持つようにしましょう
-```
