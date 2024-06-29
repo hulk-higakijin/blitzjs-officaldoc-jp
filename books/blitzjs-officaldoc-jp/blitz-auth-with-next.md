@@ -2,39 +2,39 @@
 title: Next.jsでのBlitz認証
 ---
 
-このガイドでは、Next.jsアプリにBlitz認証を追加する方法を説明します。Next.jsとBlitzのセットアップ、基本的な認証ロジックの作成、NextのページおよびAPIハンドラー内でのBlitz認証機能の使用について説明します。
+このガイドでは、Next.jsアプリにBlitz Authを追加する方法をカバーします。BlitzとNext.jsの設定、基本的な認証ロジックの作成、およびBlitz Auth機能をNextのページとAPIハンドラ内で使用する方法について説明します。
 
-ガイドを進める際に行き詰まった場合は、[このリポジトリ](https://github.com/beerose/next13-blitz-auth)を参照してください。
+ガイドを進める際に詰まった場合は、[このリポジトリ](https://github.com/beerose/next13-blitz-auth)を参照してください。
 
 ## 新しいNext.jsアプリの作成 {#create-new-next-app}
 
-まず、`create-next-app`を使って新しいNextアプリケーションを作成します:
+まず、`create-next-app`を使用して新しいNextアプリケーションを作成します。
 
 ```sh
 npx create-next-app@latest
 ```
 
-その後、`yarn dev`を実行し、ブラウザで`http://localhost:3000`を開いて確認できます。
+次に、`yarn dev`を実行し、ブラウザで`http://localhost:3000`を開いて確認できます。
 
-## Blitzのセットアップ {#blitz-setup}
+## Blitzの設定 {#blitz-setup}
 
 ### 依存関係のインストール {#install-dependencies}
 
-次のステップとして、Blitz.jsのパッケージをインストールする必要があります:
+次に、Blitz.jsのパッケージをインストールする必要があります。
 
-- `blitz` — Blitzのコアパッケージで、Blitz CLI、ユーティリティ、他のBlitzパッケージで使用される基本機能が含まれています。
-- `@blitzjs/next` — Next.jsフレームワークアダプターで、NextプロジェクトでBlitzを初期化するために必要です。
-- `@blitzjs/auth` — このガイドで紹介する認証プラグインです。
+- `blitz` — Blitzのコアパッケージで、Blitz CLI、ユーティリティ、および他のBlitzパッケージで使用されるコア関数を含みます。
+- `@blitzjs/next` — Next.jsフレームワークアダプタで、NextプロジェクトでBlitzを初期化するために必要です。
+- `@blitzjs/auth` — このガイドで探るAuthプラグインです。
 
 ```sh
 yarn add blitz @blitzjs/next @blitzjs/auth
 ```
 
-アプリでBlitzプラグインを機能させるには、クライアント側とサーバー側の2つの設定ファイルが必要です。まず、`src`ディレクトリを作成し、クライアント側の設定ファイルから始めましょう。
+アプリ内でBlitzプラグインを機能させるためには、クライアント側とサーバー側の2つの設定ファイルが必要です。まずは`src`ディレクトリを作成し、クライアント側から始めましょう。
 
 ### `blitz-client.ts`ファイルを追加 {#add-blitz-client}
 
-新しいファイル`blitz-client.ts`を作成し、以下の内容を追加します:
+新しいファイル`blitz-client.ts`を作成し、次の内容を追加します。
 
 ```ts
 // src/blitz-client.ts:
@@ -50,11 +50,11 @@ export const { withBlitz } = setupBlitzClient({
 })
 ```
 
-ここでは、`@blitzjs/next`の`setupBlitzClient`を使用して、使用したいプラグインの設定を提供しています。この場合、認証プラグインにのみ関心があります。設定する必要があるのはクッキープリフィックスだけで、残りはBlitzのデフォルトに依存します。`authConfig`を個別の変数として持つ理由は、サーバー設定で再利用できるようにするためです。
+ここでは、`@blitzjs/next`の`setupBlitzClient`を使用し、使用したいプラグインの設定を提供します。今回の場合、関心があるのはAuthプラグインだけです。設定する必要があるのはクッキーのプレフィックスだけで、他はBlitzのデフォルトに頼ります。`authConfig`を別の変数として持つ理由は、それをエクスポートしてサーバー設定で再利用できるようにするためです。
 
 ### `blitz-server.ts`ファイルを追加 {#add-blitz-server}
 
-次に、サーバー側の設定に進みます。同じディレクトリに`blitz-server.ts`ファイルを追加します:
+次に、サーバー側の設定を行います。同じディレクトリに`blitz-server.ts`ファイルを追加します。
 
 ```ts
 // src/blitz-server.ts
@@ -79,18 +79,18 @@ export const { gSSP, gSP, api } = setupBlitzServer({
 })
 ```
 
-このファイルでは、より多くのことを行っています:
+このファイルでは、以下のようなことが行われています。
 
-- `@blitzjs/next`から`setupBlitzServer`を使用しています（クライアント設定ファイルと同様に）。
-- 認証プラグインのサーバー側設定では、2つの追加項目が必要です:
-  - `storage` : Blitzはセッション情報をデータベースに保存するため、Blitz認証がストレージにアクセスできる方法を指定する必要があります。
-  - `isAuthorized`: ユーザーロールがページやその他の保護されたコードにアクセスできるかどうかを判断する関数です。ここではBlitz認証で提供される`simpleRolesIsAuthorized`を使用します。詳細はhttps://blitzjs.com/docs/authorization#is-authorized-adaptersで確認できます。
+- `@blitzjs/next`の`setupBlitzServer`を使用（クライアント設定ファイルと同様）
+- Authプラグインのサーバー側設定では、2つの追加の要素が必要です。
+  - `storage` : Blitzはセッション情報をデータベースに保存するため、Blitz Authがストレージにアクセスする方法を指定する必要があります。
+  - `isAuthorized`: ページや他の保護されたコードにアクセスするユーザーロールを決定する関数です。Blitz Authが提供する`simpleRolesIsAuthorized`を使用します。詳細はこちらを参照してください：https://blitzjs.com/docs/authorization#is-authorized-adapters。
 
 ### `types.ts`ファイルを追加 {#add-types}
 
-`blitz-server.ts`ファイルを作成した後、Blitz認証設定の`storage`プロパティに関するいくつかのTypeScriptの問題に気付いたかもしれません。これは、Blitzが`Session`オブジェクトの見た目を設定するための型拡張を使用しているためです。プロジェクトのルートに`types.ts`ファイルを作成しましょう:
+`blitz-server.ts`ファイルを作成した後、Blitz Auth設定の`storage`プロパティに関連するTypeScriptの問題が発生するかもしれません。これは、Blitzが型拡張を使用して`Session`オブジェクトの見た目を設定するためです。プロジェクトのルートに`types.ts`ファイルを作成します。
 
-```
+```ts
 import { SimpleRolesIsAuthorized } from "@blitzjs/auth"
 import { User } from "./prisma"
 
@@ -109,25 +109,25 @@ declare module "@blitzjs/auth" {
 
 ### データベース接続の設定 {#setup-database}
 
-Blitz認証はセッションベースの認証システムを提供するため、セッション情報を格納するデータベースが必要です。新しいBlitzアプリにはデフォルトでPrismaの設定が含まれていますが、このパッケージはデータベースに依存しないため、このガイドではPrismaを使う場合と使わない場合の2つのオプションについて説明します。
+Blitz Authはセッションベースの認証システムを提供するため、セッション情報を保存するためのデータベースが必要です。新しいBlitzアプリにはデフォルトでPrismaセットアップがありますが、このパッケージはデータベースに依存しないため、このガイドではPrismaを使用する場合としない場合の2つのオプションについて説明します。
 
-Prismaを使用しない場合は[Without Prismaセクション](#without-prisma)に進んでください。
+Prismaを使用したくない場合は、[Prismaなしのセクション](#without-prisma)に進んでください。
 
 #### Prismaを使用する場合 {#with-prisma}
 
-まず、`prisma`と`@prisma/client`をインストールします:
+まず、`prisma`と`@prisma/client`をインストールします。
 
 ```sh
 yarn add prisma @prisma/client
 ```
 
-次に、そのCLIを使用して新しいPrismaクライアントを初期化します:
+次に、CLIを使用して新しいPrismaクライアントを初期化します。
 
 ```sh
-    yarn prisma init --datasource-provider sqlite
+yarn prisma init --datasource-provider sqlite
 ```
 
-新しいPrismaクライアントも作成する必要があります。そのため、`prisma`ディレクトリに`index.ts`ファイルを作成し、以下の内容を追加します:
+また、新しいPrismaクライアントを作成する必要があります。そのために、`prisma`ディレクトリに`index.ts`ファイルを作成し、次の内容を追加します。
 
 ```ts
 // prisma/index.ts
@@ -140,9 +140,9 @@ export default db
 
 ##### Prismaスキーマの修正
 
-次に、`prisma/schema.prisma`ファイルを更新して、`User`、`Session`、および`Token`データベースモデルを追加します:
+次に、`prisma/schema.prisma`ファイルを更新し、`User`、`Session`、および`Token`データベースモデルを追加します。
 
-```
+```prisma
 model User {
   id             Int      @id @default(autoincrement())
   email          String   @unique
@@ -163,15 +163,13 @@ model Session {
 }
 ```
 
-変更をデータベースに適用し、PrismaのTypeScript型を生成するには、`yarn prisma migrate dev`を実行します。
+データベースに変更を適用し、PrismaのTypeScriptタイプを生成するには、`yarn prisma migrate dev`を実行します。
 
-次のステップに進みます:
-[認証ロジックの追加](/docs/blitz-auth-with-next/add-auth-logic).
+次のステップに進みます：[認証ロジックの追加](/docs/blitz-auth-with-next/add-auth-logic)。
 
-#### Prismaを使用しない場合 {#without-prisma}
+#### Prismaなしの場合 {#without-prisma}
 
-Blitz認証設定の`storage`プロパティは、[`SessionConfigMethods`インターフェースを実装するオブジェクトを受け入れます](/docs/auth-config#customize-session-persistence-and-database-access)。
-これらのメソッドは次の通りです:
+Blitz Authの設定における`storage`プロパティは、[`SessionConfigMethods`インターフェースを実装するオブジェクトを受け入れます](/docs/auth-config#customize-session-persistence-and-database-access)。メソッドは以下の通りです。
 
 - `getSession`
 - `getSessions`
@@ -179,7 +177,7 @@ Blitz認証設定の`storage`プロパティは、[`SessionConfigMethods`イン�
 - `updateSession`
 - `deleteSession`
 
-どのデータベースやAPIでも使用できますが、このガイドではRedisの例を示します:
+任意のデータベースまたはAPIを使用できますが、このガイドではRedisの例を示します。
 
 ```ts
 import IoRedis from "ioredis"
@@ -205,7 +203,9 @@ export function getRedis(): IoRedis.Redis {
 
 export function getAuthRedis(): IoRedis.Redis {
   if (dbs.auth) {
-    return dbs.auth
+
+
+ return dbs.auth
   }
   return (dbs.auth = createRedis(1))
 }
@@ -326,15 +326,13 @@ const { gSSP, gSP, api } = setupBlitz({
 
 ## 認証ロジックの追加 {#add-auth-logic}
 
-セットアップ部分が完了したので、Blitz認証を使用してシンプルな認証ロジックを実装することができます。このガイドでは、サインアップ、ログイン、ログアウトをカバーします。
+設定部分が完了したので、Blitz Authを使用して簡単な認証ロジックを実装します。このガイドでは、サインアップ、ログイン、およびログアウトをカバーします。
 
 ### `pages/api/signup.ts`ファイルを追加 {#add-signup-route}
 
-まず、`signup`という新しいAPIルートを作成します。その中で、`src/blitz-server.ts`の`setupBlitzServer`関数から取得した`api`関数を使用します。これは、Blitzの`ctx`オブジェクトへのアクセスを提供するNextのAPIハンドラーのラッパーです。このオブジェクトには認証関連のメソッドとプロパティが含まれています。
+最初に、`signup`という新しいAPIルートを作成します。その中で、`src/blitz-server.ts`の`setupBlitzServer`関数から取得した`api`関数を使用します。これは、Blitzの`ctx`オブジェクトへのアクセスを提供するNextのAPIハンドラのラッパーです。このハンドラ内で、ユーザーが提供したパスワードをハッシュ化するために`@blitzjs/auth`の`SecurePassword`を使用します。次に、データベースに新しいユーザーを作成し、`$create`メソッドを使用して新しい認証済みセッションを作成します。`session.$create`に提供するオブジェクトはパブリックデータです。これは、`types.ts`ファイルで指定したのと同じプロパティを含みます。最後に、クライアントに応答を送信します。
 
-ハンドラーの中では、ユーザーが提供したパスワードをハッシュ化するために`@blitzjs/auth`から`SecurePassword`を使用します。次に、データベースに新しいユーザーを作成し、`$create`メソッドを使用して新しい認証済みセッションを作成します。`session.$create`に提供するオブジェクトはPublicDataです。これは`types.ts`ファイルで指定したプロパティと同じプロパティを含んでいます。最後に、クライアントに応答を送信します。
-
-注意: このガイドでは、エラーハンドリングは行っていません。これは、ガイドを最小限に保ち、Next.jsでBlitz認証を設定する方法に焦点を当てるためです。アプリケーションで使用する前に、適宜拡張および修正する必要があります。
+注：このガイドをシンプルに保つためにエラーハンドリングは行っていません。アプリケーションで使用する前に、適宜拡張および修正してください。
 
 ```ts
 // pages/api/signup.ts
@@ -344,7 +342,7 @@ import { api } from "../../src/blitz-server"
 import db from "../../prisma"
 
 const signup = api(async (req, res, ctx) => {
-  // TODO: パスワードの長さを確保するためのランタイムバリデーション（例：zod）を追加することができます。
+  // TODO: ランタイム検証（例えばzodを使用して）を追加してパスワードの長さを確認することができます
   const hashedPassword = await SecurePassword.hash(req.body.password)
 
   const email = req.body.email
@@ -365,9 +363,9 @@ const signup = api(async (req, res, ctx) => {
 export default signup
 ```
 
-### サインアップフォームの`onSubmit`メソッドに`/signup`のフェッチコールを追加 {#add-signup-fetch-call}
+### サインアップフォームの`onSubmit`メソッドに`/signup`フェッチコールを追加 {#add-signup-fetch-call}
 
-サインアップのバックエンドロジックがあるので、クライアントから新しいエンドポイントを呼び出すことができます。例えば、ユーザーがサインアップフォームを送信したときに呼び出します。この呼び出しは以下のようになります:
+バックエンドのサインアップロジックがあるので、クライアントから新しいエンドポイントを呼び出します。例えば、ユーザーがサインアップフォームを送信したときです。呼び出しは次のようになります。
 
 ```tsx
 import { getAntiCSRFToken } from "@blitzjs/auth"
@@ -384,11 +382,11 @@ await fetch("/api/signup", {
 })
 ```
 
-ここで注目すべき点は、`getAntiCSRFToken`の使用です。クライアントからAPIルートにリクエストを送信する場合、`anti-csrf`ヘッダーを含める必要があります。詳細は[こちら](https://blitzjs.com/docs/session-management#manual-api-requests)で確認できます。
+ここで注目すべきは、`getAntiCSRFToken`の使用です。クライアントからAPIルートへのリクエストを行う際には、`anti-csrf`ヘッダーを含める必要があります。詳細は[こちら](https://blitzjs.com/docs/session-management#manual-api-requests)を参照してください。
 
-### `pages/api/login.ts`ファイルを追加 {#add-login-route}
+### `pages/api/login.ts`を追加 {#add-login-route}
 
-前と同様に、新しいAPIルートを追加します。その中で、ログイン資格情報を確認するための`authenticateUser`関数を追加し、正しければ、サインアップハンドラーで行ったように、新しい認証済みセッションを作成します。
+前述のように、新しいAPIルートを追加します。その中で、ログイン資格情報を確認するための`authenticateUser`関数を追加し、正しければ、サインアップハンドラと同様に新しい認証済みセッションを作成します。
 
 ```ts
 // pages/api/login.ts
@@ -409,7 +407,7 @@ export const authenticateUser = async (
     password
   )
   if (result === SecurePassword.VALID_NEEDS_REHASH) {
-    // より安全なハッシュでハッシュ化されたパスワードをアップグレード
+    // より安全なハッシュでパスワードをアップグレード
     const improvedHash = await SecurePassword.hash(password)
     await db.user.update({
       where: { id: user.id },
@@ -437,7 +435,130 @@ const login = api(async (req, res, ctx) => {
 export default login
 ```
 
-### ログインフォームの`onSubmit`メソッドに`/login`のフェッチコール
+### ログインフォームの`onSubmit`メソッドに`/login`フェッチコールを追加 {#add-login-fetch-call}
 
+クライアント側では、サインアップと同様に`/api/login`にリクエストを送信する必要があります。
 
-TODO: 途切れているので続きを入力
+```tsx
+import { getAntiCSRFToken } from "@blitzjs/auth"
+
+const antiCSRFToken = getAntiCSRFToken()
+await fetch("/api/login", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "
+
+anti-csrf": antiCSRFToken,
+  },
+  body: JSON.stringify({ email, password }),
+})
+```
+
+### `pages/api/logout.ts`を追加 {#add-logout-route}
+
+API側で最後に行うことはログアウトハンドラを追加することです。内部でセッションを削除し、ユーザーをログアウトする`$revoke`関数を使用します。
+
+```ts
+// pages/api/logout.ts
+import { api } from "../../src/blitz-server"
+
+const logout = api(async (_req, res, ctx) => {
+  await ctx.session.$revoke()
+  res.status(200).json({ message: "Logged out" })
+})
+
+export default logout
+```
+
+## APIルート、`getServerSideProps`、および`getStaticProps`での認証の使用 {#using-auth-gssp-gsp}
+
+Blitz AuthセッションのメソッドをNext.js APIルートで使用する方法はすでに見ました。同様のことを`getServerSideProps`と`getStaticProps`でも行うことができます。`createBlitzServer`は`gSSP`と`gSP`関数を返します。これらは`getServerSideProps`と`getStaticProps`のラッパーです。使用例：
+
+```tsx
+// MyPage.tsx
+import { gSSP } from "src/blitz-server"
+
+export const getServerSideProps = gSSP(async ({ ctx }) => {
+  const session = ctx.session
+  // session.$authorize
+  // session.$setPublicData
+  // など
+})
+```
+
+## クライアント側でのセッションアクセス {#access-session-on-the-client}
+
+Blitz Authは、`PublicData`と`isLoading`プロパティを返す`useSession()`フックを提供します。このフックはアプリケーションのどこでも使用できます。
+
+注：`useSession()`はデフォルトでサスペンスを使用するため、ツリー内の上位に`<Suspense>`コンポーネントが必要です。または、`useSession({suspense: false})`を設定してサスペンスを無効にすることができます。
+
+使用例：
+
+```tsx
+import { useSession } from "@blitzjs/auth"
+
+function Component() {
+  const session = useSession()
+
+  const userId = session.userId
+  const role = session.role
+
+  return /*... */
+}
+```
+
+## ページに認証を追加 {#adding-auth-to-pages}
+
+これまでに行ったのはBlitz Auth機能の一部です。ページを保護する方法も簡単に探ってみましょう。Blitz Authでは、ページやレイアウトに`authenticate`または`redirectAuthenticatedTo`プロパティを追加できます。それらを使用するためには、`App`コンポーネントを`withBlitz` HOCでラップする必要があります。まだない場合は、`_app.tsx`ファイルを`pages`ディレクトリに追加します。このファイルでは、`App`コンポーネントを`withBlitz`でラップする必要があります。
+
+```tsx
+import { AppProps } from "next/app"
+import React from "react"
+import { withBlitz } from "../src/blitz-client"
+
+function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+export default withBlitz(App)
+```
+
+注：`withBlitz`は現在、新しいNext 13レイアウトでは機能しません。サポートを追加するまで、古い`pages/_app.tsx`を使用する必要があります。
+
+では、ページに戻りましょう。`signup.tsx`と`login.tsx`では、`redirectAuthenticatedTo`を使用します。
+
+```tsx
+SignupPage.redirectAuthenticatedTo = "/user"
+export default SignupPage
+```
+
+そして、`login.tsx`では：
+
+```tsx
+LoginPage.redirectAuthenticatedTo = "/user"
+export default LoginPage
+```
+
+`user.tsx`では、`authenticate`を使用し、認証されていないユーザーが訪問しようとした場合にログインページにリダイレクトします。
+
+```tsx
+UserPage.authenticate = { redirectTo: "/login" }
+export default UserPage
+```
+
+他のBlitz Authの機能を探ることに興味がある場合、フックやユーティリティがたくさんあります。[ドキュメント](https://blitzjs.com/docs/auth-utils)をチェックしてください。
+
+## まとめ {#summary}
+
+このガイドでは、Blitz AuthのPrisma設定、新しいNext.jsアプリへのBlitz Authの追加、および基本的な認証フローの実装をカバーしました。また、Blitz Authを使用してページを保護する方法も探りました。
+
+サインアップ、ログイン、ログアウト、パスワードリセットを備えた完全なBlitzアプリを見たい場合は、[Blitzのリポジトリの例](https://github.com/blitz-js/blitz/tree/main/apps/toolkit-app)をチェックするか、`npx blitz new my-new-blitz-app`を実行して新しいプロダクション準備済みBlitzアプリを生成できます。
+
+このガイドのセットアップを含むリポジトリは[こちら](https://github.com/beerose/next13-blitz-auth)で入手できます。
+
+Blitz.jsについてもっと知りたい場合は、以下のリソースをご覧ください。
+
+- [Blitz.js Documentation](https://blitzjs.com/docs/) — Blitz.jsについて学ぶ。
+- [Blitz Auth Documentation](https://blitzjs.com/docs/auth) — Blitz Authプラグインについて学ぶ。
+
+フィードバックがある場合は、[Discord](https://discord.blitzjs.com/)または[GitHub](https://github.com/blitz-js/blitz)でご連絡ください。
